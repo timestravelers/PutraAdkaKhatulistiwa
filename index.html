@@ -14,19 +14,20 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #0a4a9c;
-            --secondary: #e64b3b;
-            --accent: #f5a623;
-            --dark: #1a202c;
-            --light: #f8fafc;
-            --gray: #718096;
+            --primary: #1a1a1a;
+            --secondary: #ff4d4d;
+            --accent: #00d4ff;
+            --dark: #0f0f0f;
+            --light: #ffffff;
+            --gray: #808080;
+            --gray-light: #f5f5f5;
             --transition: all 0.3s ease;
         }
         
@@ -36,9 +37,13 @@
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
-            font-family: 'Inter', sans-serif;
-            color: var(--dark);
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary);
             line-height: 1.6;
             background-color: var(--light);
             overflow-x: hidden;
@@ -52,7 +57,7 @@
         }
         
         .section {
-            padding: 6rem 0;
+            padding: 5rem 0;
         }
         
         .section-title {
@@ -61,20 +66,22 @@
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--primary);
             position: relative;
             display: inline-block;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
         
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
+            width: 100px;
+            height: 3px;
             background: var(--secondary);
             border-radius: 2px;
         }
@@ -82,26 +89,29 @@
         .section-title p {
             color: var(--gray);
             max-width: 600px;
-            margin: 1.5rem auto 0;
+            margin: 2rem auto 0;
+            font-size: 1.1rem;
         }
         
         .btn {
             display: inline-block;
             background: var(--primary);
             color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 4px;
+            padding: 1rem 2.5rem;
+            border-radius: 0;
             text-transform: uppercase;
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             transition: var(--transition);
             border: 2px solid var(--primary);
+            font-size: 0.9rem;
+            cursor: pointer;
         }
         
         .btn:hover {
-            background: transparent;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            background: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateY(-2px);
         }
         
         .btn-secondary {
@@ -110,16 +120,19 @@
         }
         
         .btn-secondary:hover {
-            background: transparent;
+            background: var(--primary);
+            border-color: var(--primary);
         }
         
         .btn-outline {
             background: transparent;
             border: 2px solid var(--primary);
+            color: var(--primary);
         }
         
         .btn-outline:hover {
             background: var(--primary);
+            color: white;
         }
         
         /* Header Styles */
@@ -129,7 +142,7 @@
             left: 0;
             width: 100%;
             background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
             z-index: 1000;
             transition: var(--transition);
         }
@@ -138,44 +151,45 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.2rem 0;
+            padding: 1rem 0;
         }
         
         .logo {
             display: flex;
             align-items: center;
+            text-decoration: none;
+            gap: 0.8rem;
         }
         
         .logo img {
-            height: 50px;
-            margin-right: 10px;
+            height: 45px;
+            width: auto;
         }
         
         .logo h1 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--primary);
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
         
         nav ul {
             display: flex;
             list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 2rem;
+            gap: 2.5rem;
         }
         
         nav ul li a {
             text-decoration: none;
-            color: var(--dark);
+            color: var(--primary);
             font-weight: 500;
             transition: var(--transition);
             position: relative;
+            font-size: 0.95rem;
         }
         
         nav ul li a:hover {
-            color: var(--primary);
+            color: var(--secondary);
         }
         
         nav ul li a::after {
@@ -185,7 +199,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary);
+            background: var(--secondary);
             transition: var(--transition);
         }
         
@@ -196,25 +210,28 @@
         .mobile-toggle {
             display: none;
             cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary);
         }
         
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
             position: relative;
             overflow: hidden;
+            margin-top: 70px;
         }
         
         .hero::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
+            right: 0;
+            width: 50%;
             height: 100%;
-            background: url('https://i.imgur.com/0kLcYdF.png') no-repeat center center/cover;
-            opacity: 0.05;
+            background: url('https://i.imgur.com/0kLcYdF.png') no-repeat center right/contain;
+            opacity: 0.08;
             z-index: 0;
         }
         
@@ -231,35 +248,50 @@
         }
         
         .hero-text h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
+            font-size: 4rem;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
-            color: var(--dark);
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: -1px;
         }
         
         .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
             color: var(--gray);
+            line-height: 1.8;
         }
         
         .hero-btns {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         
         /* About Section */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
         
         .about-img {
-            border-radius: 10px;
+            border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .about-img::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--secondary);
+            z-index: -1;
         }
         
         .about-img img {
@@ -269,67 +301,77 @@
         }
         
         .about-img:hover img {
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
         
         .about-text h3 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
             color: var(--primary);
+            font-weight: 700;
+            line-height: 1.2;
         }
         
         .about-text p {
             margin-bottom: 1.5rem;
+            color: var(--gray);
+            line-height: 1.8;
         }
         
         .features {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+            gap: 2rem;
             margin-top: 2rem;
         }
         
         .feature {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         
         .feature i {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            color: var(--secondary);
+            min-width: 30px;
+        }
+        
+        .feature h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
             color: var(--primary);
-            background: #e0e7ff;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        }
+        
+        .feature p {
+            color: var(--gray);
+            font-size: 0.95rem;
         }
         
         /* Portfolio Section */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
         
         .portfolio-item {
-            border-radius: 10px;
+            border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
             position: relative;
         }
         
         .portfolio-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
         }
         
         .portfolio-img {
-            height: 300px;
+            height: 280px;
             overflow: hidden;
+            position: relative;
         }
         
         .portfolio-img img {
@@ -340,68 +382,97 @@
         }
         
         .portfolio-item:hover .portfolio-img img {
-            transform: scale(1.1);
+            transform: scale(1.08);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay i {
+            color: white;
+            font-size: 2.5rem;
         }
         
         .portfolio-content {
-            padding: 1.5rem;
+            padding: 2rem;
             background: white;
         }
         
         .portfolio-content h4 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 0.5rem;
             color: var(--primary);
+            font-weight: 600;
         }
         
         .portfolio-content p {
             color: var(--gray);
             margin-bottom: 1rem;
+            font-size: 0.95rem;
         }
         
         .portfolio-category {
             display: inline-block;
-            background: #e0e7ff;
-            color: var(--primary);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
+            background: var(--gray-light);
+            color: var(--secondary);
+            padding: 0.4rem 1rem;
+            border-radius: 0;
             font-size: 0.8rem;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         /* Testimonials Section */
         .testimonials-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
         .testimonial {
             background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 0;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             margin-bottom: 2rem;
             position: relative;
+            border-left: 4px solid var(--secondary);
         }
         
         .testimonial::before {
             content: '\201C';
             position: absolute;
-            top: 20px;
+            top: 10px;
             left: 20px;
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: var(--secondary);
-            opacity: 0.2;
+            opacity: 0.15;
             font-family: serif;
         }
         
         .testimonial-content {
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
         
         .testimonial-content p {
             font-style: italic;
             color: var(--gray);
+            line-height: 1.8;
         }
         
         .testimonial-author {
@@ -420,35 +491,38 @@
         
         .author-info h5 {
             color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.2rem;
         }
         
         .author-info p {
             color: var(--gray);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         /* Blog Section */
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
         
         .blog-card {
-            border-radius: 10px;
+            border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
         }
         
         .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
         }
         
         .blog-img {
             height: 250px;
             overflow: hidden;
+            position: relative;
         }
         
         .blog-img img {
@@ -459,11 +533,11 @@
         }
         
         .blog-card:hover .blog-img img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
         
         .blog-content {
-            padding: 1.5rem;
+            padding: 2rem;
             background: white;
         }
         
@@ -471,130 +545,162 @@
             display: flex;
             gap: 1rem;
             color: var(--gray);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .blog-content h4 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
             color: var(--primary);
+            font-weight: 600;
         }
         
         .blog-content p {
             color: var(--gray);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .blog-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .blog-link:hover {
+            gap: 1rem;
         }
         
         /* Contact Section */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
         }
         
         .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            margin-bottom: 2rem;
             color: var(--primary);
+            font-weight: 700;
         }
         
-        .contact-detail {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+        .contact-item {
+            margin-bottom: 2.5rem;
         }
         
-        .contact-detail i {
+        .contact-item i {
             font-size: 1.5rem;
-            color: var(--primary);
-            background: #e0e7ff;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: var(--secondary);
+            margin-bottom: 1rem;
         }
         
-        .contact-form .form-group {
+        .contact-item h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .contact-item p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        .contact-form {
+            background: var(--gray-light);
+            padding: 2.5rem;
+            border-radius: 0;
+        }
+        
+        .form-group {
             margin-bottom: 1.5rem;
         }
         
-        .contact-form label {
+        .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 500;
+            font-weight: 600;
+            color: var(--primary);
         }
         
-        .contact-form input,
-        .contact-form textarea {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 4px;
-            font-family: 'Inter', sans-serif;
+            padding: 1rem;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            background: transparent;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+            color: var(--primary);
         }
         
-        .contact-form textarea {
-            min-height: 150px;
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-bottom-color: var(--secondary);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
         }
         
         /* Footer */
         footer {
             background: var(--primary);
             color: white;
-            padding: 4rem 0 2rem;
+            padding: 3rem 0 1.5rem;
         }
         
-        .footer-container {
+        .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
         
-        .footer-col h4 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.5rem;
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
         
-        .footer-col h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--secondary);
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.8;
+            font-size: 0.95rem;
         }
         
-        .footer-col ul {
+        .footer-section ul {
             list-style: none;
         }
         
-        .footer-col ul li {
+        .footer-section ul li {
             margin-bottom: 0.8rem;
         }
         
-        .footer-col ul li a {
-            color: #cbd5e1;
+        .footer-section ul li a {
+            color: #ccc;
             text-decoration: none;
             transition: var(--transition);
         }
         
-        .footer-col ul li a:hover {
-            color: white;
-            padding-left: 5px;
+        .footer-section ul li a:hover {
+            color: var(--secondary);
         }
         
         .social-links {
             display: flex;
             gap: 1rem;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
         
         .social-links a {
@@ -604,7 +710,7 @@
             width: 40px;
             height: 40px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
+            border-radius: 0;
             color: white;
             transition: var(--transition);
         }
@@ -618,7 +724,7 @@
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #cbd5e1;
+            color: #aaa;
             font-size: 0.9rem;
         }
         
@@ -640,7 +746,7 @@
             background: white;
             width: 90%;
             max-width: 800px;
-            border-radius: 10px;
+            border-radius: 0;
             overflow: hidden;
         }
         
@@ -668,7 +774,7 @@
         .admin-tabs {
             display: flex;
             margin-bottom: 2rem;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 2px solid #e2e8f0;
             padding-bottom: 1rem;
         }
         
@@ -678,12 +784,12 @@
             border-bottom: 3px solid transparent;
             margin-right: 1rem;
             transition: var(--transition);
+            font-weight: 500;
         }
         
         .admin-tab.active {
-            border-color: var(--primary);
-            color: var(--primary);
-            font-weight: 600;
+            border-color: var(--secondary);
+            color: var(--secondary);
         }
         
         .admin-section {
@@ -694,39 +800,13 @@
             display: block;
         }
         
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 4px;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .portfolio-list,
-        .testimonial-list,
-        .blog-list {
-            margin-top: 2rem;
-        }
-        
         .content-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem;
             border: 1px solid #e2e8f0;
-            border-radius: 5px;
+            border-radius: 0;
             margin-bottom: 1rem;
         }
         
@@ -753,23 +833,19 @@
             background: white;
             width: 90%;
             max-width: 400px;
-            border-radius: 10px;
+            border-radius: 0;
             overflow: hidden;
         }
         
         .login-header {
             background: var(--primary);
             color: white;
-            padding: 1.5rem;
+            padding: 2rem;
             text-align: center;
         }
         
         .login-body {
             padding: 2rem;
-        }
-        
-        .login-form .form-group {
-            margin-bottom: 1.5rem;
         }
         
         /* Responsive Design */
@@ -780,6 +856,10 @@
             }
             
             .hero-text h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title h2 {
                 font-size: 2.5rem;
             }
         }
@@ -801,6 +881,13 @@
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
                 transition: var(--transition);
                 transform: translateY(-100%);
+                gap: 0;
+            }
+            
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                padding: 1rem 0;
             }
             
             nav ul.active {
@@ -808,7 +895,7 @@
             }
             
             .hero-text h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .hero-btns {
@@ -817,6 +904,15 @@
             
             .section-title h2 {
                 font-size: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -830,7 +926,19 @@
             }
             
             .section-title h2::after {
-                width: 50px;
+                width: 60px;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero {
+                margin-top: 60px;
+            }
+            
+            .section {
+                padding: 3rem 0;
             }
         }
     </style>
@@ -899,24 +1007,24 @@
                             </div>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-award"></i>
                             <div>
-                                <h4>Berkelanjutan</h4>
-                                <p>Solusi ramah lingkungan untuk masa depan</p>
+                                <h4>Berpengalaman</h4>
+                                <p>Lebih dari 200 proyek sukses</p>
                             </div>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-lightbulb"></i>
                             <div>
-                                <h4>Kreatif</h4>
-                                <p>Desain inovatif yang memenuhi kebutuhan unik</p>
+                                <h4>Inovatif</h4>
+                                <p>Solusi kreatif dan berkelanjutan</p>
                             </div>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-handshake"></i>
                             <div>
-                                <h4>Tepat Waktu</h4>
-                                <p>Proses yang terorganisir dan sesuai jadwal</p>
+                                <h4>Terpercaya</h4>
+                                <p>Komitmen penuh terhadap klien</p>
                             </div>
                         </div>
                     </div>
@@ -926,14 +1034,52 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="section" style="background: #f8fafc;">
+    <section id="portfolio" class="section" style="background: var(--gray-light);">
         <div class="container">
             <div class="section-title">
                 <h2>Portofolio Kami</h2>
-                <p>Temukan proyek-proyek terbaik yang telah kami wujudkan dengan dedikasi dan keahlian</p>
+                <p>Koleksi proyek-proyek terbaik yang telah kami wujudkan dengan dedikasi dan profesionalisme</p>
             </div>
-            <div class="portfolio-grid" id="portfolio-grid">
-                <!-- Portfolio items will be loaded here via JavaScript -->
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Proyek 1">
+                        <div class="portfolio-overlay">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>Gedung Perkantoran Modern</h4>
+                        <p>Desain arsitektur kontemporer dengan fokus pada efisiensi energi dan kenyamanan pengguna</p>
+                        <span class="portfolio-category">Arsitektur</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Proyek 2">
+                        <div class="portfolio-overlay">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>Interior Retail Premium</h4>
+                        <p>Transformasi ruang retail dengan konsep modern yang meningkatkan pengalaman pelanggan</p>
+                        <span class="portfolio-category">Interior Design</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Proyek 3">
+                        <div class="portfolio-overlay">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>Kompleks Residensial</h4>
+                        <p>Pengembangan hunian berkualitas dengan fasilitas lengkap dan desain yang humanis</p>
+                        <span class="portfolio-category">Konstruksi</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -943,23 +1089,99 @@
         <div class="container">
             <div class="section-title">
                 <h2>Testimoni Klien</h2>
-                <p>Apa yang dikatakan klien kami tentang pengalaman bekerja dengan Putra Adka Khatulistiwa</p>
+                <p>Kepercayaan dan kepuasan klien adalah kesuksesan kami</p>
             </div>
-            <div class="testimonials-container" id="testimonials-container">
-                <!-- Testimonials will be loaded here via JavaScript -->
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>Putra Adka Khatulistiwa telah membantu kami mewujudkan visi kantor impian. Tim mereka sangat profesional dan responsif terhadap setiap kebutuhan kami.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Klien 1">
+                        <div class="author-info">
+                            <h5>Budi Santoso</h5>
+                            <p>Direktur PT. Maju Jaya</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>Hasil desain interior mereka melebihi ekspektasi kami. Perhatian terhadap detail dan kualitas material sangat mengesankan.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Klien 2">
+                        <div class="author-info">
+                            <h5>Siti Nurhaliza</h5>
+                            <p>Pemilik Boutique Hotel</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>Dari konsep hingga eksekusi, tim Putra Adka Khatulistiwa menunjukkan dedikasi luar biasa. Proyek kami selesai tepat waktu dengan kualitas terbaik.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Klien 3">
+                        <div class="author-info">
+                            <h5>Ahmad Wijaya</h5>
+                            <p>Manajer Proyek Konstruksi</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Blog Section -->
-    <section id="blog" class="section" style="background: #f8fafc;">
+    <section id="blog" class="section" style="background: var(--gray-light);">
         <div class="container">
             <div class="section-title">
-                <h2>Tips & Trik</h2>
-                <p>Temukan informasi terbaru dan tips berharga tentang desain interior, konstruksi, dan perencanaan bangunan</p>
+                <h2>Tips & Trik Desain</h2>
+                <p>Panduan dan inspirasi untuk menciptakan ruang yang sempurna</p>
             </div>
-            <div class="blog-grid" id="blog-grid">
-                <!-- Blog posts will be loaded here via JavaScript -->
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Blog 1">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 15 Des 2024</span>
+                            <span><i class="fas fa-user"></i> Admin</span>
+                        </div>
+                        <h4>Tren Desain Interior 2024</h4>
+                        <p>Pelajari tren desain interior terkini yang akan mendominasi tahun ini, dari warna hingga material pilihan.</p>
+                        <a href="#" class="blog-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Blog 2">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 10 Des 2024</span>
+                            <span><i class="fas fa-user"></i> Admin</span>
+                        </div>
+                        <h4>Memaksimalkan Ruang Kecil</h4>
+                        <p>Strategi dan tips praktis untuk membuat ruang kecil terasa lebih luas dan nyaman dengan desain yang tepat.</p>
+                        <a href="#" class="blog-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Blog 3">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 5 Des 2024</span>
+                            <span><i class="fas fa-user"></i> Admin</span>
+                        </div>
+                        <h4>Keberlanjutan dalam Desain</h4>
+                        <p>Bagaimana memilih material ramah lingkungan dan menciptakan desain yang berkelanjutan untuk masa depan.</p>
+                        <a href="#" class="blog-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -969,57 +1191,49 @@
         <div class="container">
             <div class="section-title">
                 <h2>Hubungi Kami</h2>
-                <p>Silakan hubungi kami untuk diskusi proyek Anda. Kami siap membantu mewujudkan visi Anda</p>
+                <p>Siap membantu mewujudkan proyek impian Anda</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Informasi Kontak</h3>
-                    <div class="contact-detail">
+                    <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Alamat</h4>
-                            <p>Jl. Arsitek No. 123, Menteng, Jakarta 10310</p>
-                        </div>
+                        <h4>Alamat</h4>
+                        <p>Jl. Sudirman No. 123<br>Jakarta Selatan 12345<br>Indonesia</p>
                     </div>
-                    <div class="contact-detail">
+                    <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Telepon</h4>
-                            <p>+62 21 8765 4321</p>
-                        </div>
+                        <h4>Telepon</h4>
+                        <p>+62 21 1234 5678<br>+62 812 3456 7890</p>
                     </div>
-                    <div class="contact-detail">
+                    <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@putraadkakhatulistiwa.id</p>
-                        </div>
+                        <h4>Email</h4>
+                        <p>info@putraadka.com<br>project@putraadka.com</p>
                     </div>
-                    <div class="contact-detail">
+                    <div class="contact-item">
                         <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Jam Kerja</h4>
-                            <p>Senin - Jumat: 08.00 - 17.00 WIB</p>
-                        </div>
+                        <h4>Jam Kerja</h4>
+                        <p>Senin - Jumat: 08:00 - 17:00<br>Sabtu: 09:00 - 13:00<br>Minggu: Tutup</p>
                     </div>
                 </div>
                 <div class="contact-form">
                     <form id="contact-form">
                         <div class="form-group">
                             <label for="name">Nama Lengkap</label>
-                            <input type="text" id="name" required>
+                            <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" required>
+                            <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="subject">Subjek</label>
-                            <input type="text" id="subject" required>
+                            <label for="phone">Telepon</label>
+                            <input type="tel" id="phone" name="phone">
                         </div>
                         <div class="form-group">
                             <label for="message">Pesan</label>
-                            <textarea id="message" required></textarea>
+                            <textarea id="message" name="message" required></textarea>
                         </div>
                         <button type="submit" class="btn">Kirim Pesan</button>
                     </form>
@@ -1031,704 +1245,222 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h4>Putra Adka Khatulistiwa</h4>
-                    <p>Spesialis dalam konstruksi, desain interior, dan perencanaan bangunan yang menggabungkan keindahan, fungsionalitas, dan keberlanjutan.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Tentang Kami</h4>
+                    <p>Putra Adka Khatulistiwa adalah konsultan arsitektur dan desain interior terpercaya dengan pengalaman lebih dari 10 tahun melayani klien di seluruh Indonesia.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h4>Menu</h4>
+                <div class="footer-section">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#portfolio">Arsitektur</a></li>
+                        <li><a href="#portfolio">Desain Interior</a></li>
+                        <li><a href="#portfolio">Konstruksi</a></li>
+                        <li><a href="#portfolio">Konsultasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigasi</h4>
                     <ul>
                         <li><a href="#home">Beranda</a></li>
-                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
                         <li><a href="#portfolio">Portofolio</a></li>
-                        <li><a href="#testimonials">Testimoni</a></li>
-                        <li><a href="#blog">Tips & Trik</a></li>
                         <li><a href="#contact">Kontak</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Layanan</h4>
-                    <ul>
-                        <li><a href="#">Desain Arsitektur</a></li>
-                        <li><a href="#">Desain Interior</a></li>
-                        <li><a href="#">Konstruksi Bangunan</a></li>
-                        <li><a href="#">Renovasi</a></li>
-                        <li><a href="#">Konsultasi</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
+                <div class="footer-section">
                     <h4>Kontak</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Jl. Arsitek No. 123, Menteng</li>
-                        <li><i class="fas fa-phone"></i> +62 21 8765 4321</li>
-                        <li><i class="fas fa-envelope"></i> info@putraadkakhatulistiwa.id</li>
-                    </ul>
+                    <p>Jl. Sudirman No. 123<br>Jakarta Selatan 12345</p>
+                    <p>+62 21 1234 5678<br>info@putraadka.com</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Putra Adka Khatulistiwa. All Rights Reserved.</p>
+                <p>&copy; 2024 Putra Adka Khatulistiwa. Semua hak dilindungi. | <a href="#" style="color: #aaa;">Kebijakan Privasi</a> | <a href="#" style="color: #aaa;">Syarat & Ketentuan</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- Login Modal -->
-    <div class="login-modal">
-        <div class="login-content">
-            <div class="login-header">
-                <h2>Login Admin</h2>
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="admin-panel">
+        <div class="admin-content">
+            <div class="admin-header">
+                <h2>Admin Panel</h2>
+                <button class="admin-close" onclick="closeAdmin()">&times;</button>
             </div>
-            <div class="login-body">
-                <form class="login-form" id="admin-login-form">
+            <div class="admin-body">
+                <div class="admin-tabs">
+                    <div class="admin-tab active" onclick="switchTab('portfolio')">Portfolio</div>
+                    <div class="admin-tab" onclick="switchTab('testimonials')">Testimoni</div>
+                    <div class="admin-tab" onclick="switchTab('blog')">Blog</div>
+                </div>
+                
+                <div id="portfolio" class="admin-section active">
+                    <h3>Kelola Portfolio</h3>
                     <div class="form-group">
-                        <label for="admin-username">Username</label>
-                        <input type="text" id="admin-username" required>
+                        <label>Judul Proyek</label>
+                        <input type="text" placeholder="Masukkan judul proyek">
                     </div>
                     <div class="form-group">
-                        <label for="admin-password">Password</label>
-                        <input type="password" id="admin-password" required>
+                        <label>Deskripsi</label>
+                        <textarea placeholder="Masukkan deskripsi proyek"></textarea>
                     </div>
-                    <button type="submit" class="btn">Masuk</button>
-                </form>
+                    <div class="form-group">
+                        <label>Kategori</label>
+                        <select>
+                            <option>Arsitektur</option>
+                            <option>Interior Design</option>
+                            <option>Konstruksi</option>
+                        </select>
+                    </div>
+                    <button class="btn">Tambah Portfolio</button>
+                    
+                    <div class="portfolio-list">
+                        <h4>Daftar Portfolio</h4>
+                        <div class="content-item">
+                            <span>Gedung Perkantoran Modern</span>
+                            <div class="content-actions">
+                                <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Edit</button>
+                                <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Hapus</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="testimonials" class="admin-section">
+                    <h3>Kelola Testimoni</h3>
+                    <div class="form-group">
+                        <label>Nama Klien</label>
+                        <input type="text" placeholder="Masukkan nama klien">
+                    </div>
+                    <div class="form-group">
+                        <label>Testimoni</label>
+                        <textarea placeholder="Masukkan testimoni"></textarea>
+                    </div>
+                    <button class="btn">Tambah Testimoni</button>
+                    
+                    <div class="testimonial-list">
+                        <h4>Daftar Testimoni</h4>
+                        <div class="content-item">
+                            <span>Budi Santoso - Direktur PT. Maju Jaya</span>
+                            <div class="content-actions">
+                                <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Edit</button>
+                                <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Hapus</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="blog" class="admin-section">
+                    <h3>Kelola Blog</h3>
+                    <div class="form-group">
+                        <label>Judul Artikel</label>
+                        <input type="text" placeholder="Masukkan judul artikel">
+                    </div>
+                    <div class="form-group">
+                        <label>Konten</label>
+                        <textarea placeholder="Masukkan konten artikel"></textarea>
+                    </div>
+                    <button class="btn">Tambah Artikel</button>
+                    
+                    <div class="blog-list">
+                        <h4>Daftar Artikel</h4>
+                        <div class="content-item">
+                            <span>Tren Desain Interior 2024</span>
+                            <div class="content-actions">
+                                <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Edit</button>
+                                <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Hapus</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Admin Panel -->
-    <div class="admin-panel">
-        <div class="admin-content">
-            <div class="admin-header">
-                <h2>Dashboard Admin</h2>
-                <button class="admin-close">&times;</button>
+    <!-- Login Modal -->
+    <div class="login-modal" id="login-modal">
+        <div class="login-content">
+            <div class="login-header">
+                <h2>Admin Login</h2>
             </div>
-            <div class="admin-body">
-                <div class="admin-tabs">
-                    <div class="admin-tab active" data-tab="portfolio">Portofolio</div>
-                    <div class="admin-tab" data-tab="testimonials">Testimoni</div>
-                    <div class="admin-tab" data-tab="blog">Blog</div>
-                </div>
-                
-                <!-- Portfolio Admin -->
-                <div class="admin-section active" id="portfolio-section">
-                    <h3>Tambah Proyek Baru</h3>
-                    <form id="portfolio-form">
-                        <div class="form-group">
-                            <label for="project-title">Judul Proyek</label>
-                            <input type="text" id="project-title" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="project-location">Lokasi</label>
-                            <input type="text" id="project-location" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="project-description">Deskripsi</label>
-                            <textarea id="project-description" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="project-category">Kategori</label>
-                            <select id="project-category" required>
-                                <option value="Residential">Residential</option>
-                                <option value="Commercial">Commercial</option>
-                                <option value="Institutional">Institutional</option>
-                                <option value="Cultural">Cultural</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="project-image">URL Gambar</label>
-                            <input type="text" id="project-image" placeholder="https://placehold.co/600x400/2c5282/white?text=Project+Name" required>
-                        </div>
-                        <button type="submit" class="btn">Simpan Proyek</button>
-                    </form>
-                    
-                    <h3 style="margin-top: 3rem;">Daftar Proyek</h3>
-                    <div class="portfolio-list" id="portfolio-list">
-                        <!-- Portfolio items will be loaded here -->
+            <div class="login-body">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
                     </div>
-                </div>
-                
-                <!-- Testimonials Admin -->
-                <div class="admin-section" id="testimonials-section">
-                    <h3>Tambah Testimoni Baru</h3>
-                    <form id="testimonial-form">
-                        <div class="form-group">
-                            <label for="testimonial-name">Nama Klien</label>
-                            <input type="text" id="testimonial-name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="testimonial-position">Posisi/Jabatan</label>
-                            <input type="text" id="testimonial-position" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="testimonial-content">Testimoni</label>
-                            <textarea id="testimonial-content" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="testimonial-image">URL Gambar</label>
-                            <input type="text" id="testimonial-image" placeholder="https://placehold.co/100x100/2c5282/white?text=Client" required>
-                        </div>
-                        <button type="submit" class="btn">Simpan Testimoni</button>
-                    </form>
-                    
-                    <h3 style="margin-top: 3rem;">Daftar Testimoni</h3>
-                    <div class="testimonial-list" id="testimonial-list">
-                        <!-- Testimonials will be loaded here -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
                     </div>
-                </div>
-                
-                <!-- Blog Admin -->
-                <div class="admin-section" id="blog-section">
-                    <h3>Tambah Artikel Baru</h3>
-                    <form id="blog-form">
-                        <div class="form-group">
-                            <label for="blog-title">Judul Artikel</label>
-                            <input type="text" id="blog-title" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="blog-excerpt">Ringkasan</label>
-                            <textarea id="blog-excerpt" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="blog-content">Konten</label>
-                            <textarea id="blog-content" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="blog-image">URL Gambar</label>
-                            <input type="text" id="blog-image" placeholder="https://placehold.co/600x400/2c5282/white?text=Blog+Image" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="blog-category">Kategori</label>
-                            <select id="blog-category" required>
-                                <option value="Desain Interior">Desain Interior</option>
-                                <option value="Konstruksi">Konstruksi</option>
-                                <option value="Tips">Tips</option>
-                                <option value="Tren">Tren Terkini</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn">Simpan Artikel</button>
-                    </form>
-                    
-                    <h3 style="margin-top: 3rem;">Daftar Artikel</h3>
-                    <div class="blog-list" id="blog-list">
-                        <!-- Blog posts will be loaded here -->
-                    </div>
-                </div>
+                    <button type="submit" class="btn" style="width: 100%;">Login</button>
+                </form>
+                <button class="btn btn-outline" style="width: 100%; margin-top: 1rem;" onclick="closeLogin()">Batal</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Initial data for the website
-        const initialData = {
-            portfolio: [
-                {
-                    id: 1,
-                    title: "Residensi Urban Modern",
-                    location: "Jakarta, Indonesia",
-                    description: "Rumah keluarga berkelanjutan yang mengintegrasikan ventilasi alami dan material lokal",
-                    category: "Residential",
-                    image: "https://placehold.co/600x400/2c5282/white?text=Residensi+Modern"
-                },
-                {
-                    id: 2,
-                    title: "Resor Eco Pantai",
-                    location: "Bali, Indonesia",
-                    description: "Pengembangan ekowisata mewah dengan jejak lingkungan minimal",
-                    category: "Commercial",
-                    image: "https://placehold.co/600x400/0c4a6e/white?text=Resor+Pantai"
-                },
-                {
-                    id: 3,
-                    title: "Pusat Warisan Budaya",
-                    location: "Yogyakarta, Indonesia",
-                    description: "Interpretasi kontemporer dari arsitektur Jawa tradisional",
-                    category: "Cultural",
-                    image: "https://placehold.co/600x400/1e3a8a/white?text=Pusat+Warisan"
-                },
-                {
-                    id: 4,
-                    title: "Taman Vertikal Urban",
-                    location: "Surabaya, Indonesia",
-                    description: "Bangunan hunian bertingkat tinggi dengan lansekap vertikal terintegrasi",
-                    category: "Institutional",
-                    image: "https://placehold.co/600x400/1e40af/white?text=Taman+Vertikal"
-                }
-            ],
-            testimonials: [
-                {
-                    id: 1,
-                    name: "Dr. Maya Suryanto",
-                    position: "Pengembang, GreenSpace Properties",
-                    content: "Perhatian terhadap detail berkelanjutan mengubah proyek kami melebihi ekspektasi.",
-                    image: "https://placehold.co/100x100/2c5282/white?text=MS"
-                },
-                {
-                    id: 2,
-                    name: "Budi Santoso",
-                    position: "Direktur Perencanaan Kota",
-                    content: "Solusi inovatif yang menghormati konteks budaya dan fungsionalitas modern.",
-                    image: "https://placehold.co/100x100/0c4a6e/white?text=BS"
-                }
-            ],
-            blog: [
-                {
-                    id: 1,
-                    title: "5 Tips Desain Interior untuk Ruang Terbatas",
-                    excerpt: "Maksimalkan ruang terbatas dengan strategi desain yang cerdas dan kreatif",
-                    content: "Dalam artikel ini, kami berbagi 5 tips utama untuk merancang interior ruang terbatas dengan efektif...",
-                    category: "Desain Interior",
-                    image: "https://placehold.co/600x400/2c5282/white?text=Interior+Tips",
-                    date: "2023-05-15"
-                },
-                {
-                    id: 2,
-                    title: "Material Konstruksi Ramah Lingkungan Terbaru",
-                    excerpt: "Temukan material konstruksi terbaru yang berkelanjutan dan ramah lingkungan",
-                    content: "Artikel ini membahas berbagai material konstruksi terbaru yang tidak hanya kuat dan tahan lama, tetapi juga ramah lingkungan...",
-                    category: "Konstruksi",
-                    image: "https://placehold.co/600x400/0c4a6e/white?text=Material+Konstruksi",
-                    date: "2023-06-20"
-                }
-            ]
-        };
-
-        // Initialize data from localStorage or use initialData
-        let websiteData = JSON.parse(localStorage.getItem('websiteData')) || initialData;
-
-        // Save data to localStorage
-        function saveData() {
-            localStorage.setItem('websiteData', JSON.stringify(websiteData));
-        }
-
-        // Render portfolio items
-        function renderPortfolio() {
-            const portfolioGrid = document.getElementById('portfolio-grid');
-            portfolioGrid.innerHTML = '';
-            
-            websiteData.portfolio.forEach(project => {
-                const portfolioItem = document.createElement('div');
-                portfolioItem.className = 'portfolio-item';
-                portfolioItem.innerHTML = `
-                    <div class="portfolio-img">
-                        <img src="${project.image}" alt="${project.title}">
-                    </div>
-                    <div class="portfolio-content">
-                        <h4>${project.title}</h4>
-                        <p>${project.description}</p>
-                        <div class="portfolio-category">${project.category}</div>
-                    </div>
-                `;
-                portfolioGrid.appendChild(portfolioItem);
-            });
-        }
-
-        // Render testimonials
-        function renderTestimonials() {
-            const testimonialsContainer = document.getElementById('testimonials-container');
-            testimonialsContainer.innerHTML = '';
-            
-            websiteData.testimonials.forEach(testimonial => {
-                const testimonialItem = document.createElement('div');
-                testimonialItem.className = 'testimonial';
-                testimonialItem.innerHTML = `
-                    <div class="testimonial-content">
-                        <p>${testimonial.content}</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="${testimonial.image}" alt="${testimonial.name}">
-                        <div class="author-info">
-                            <h5>${testimonial.name}</h5>
-                            <p>${testimonial.position}</p>
-                        </div>
-                    </div>
-                `;
-                testimonialsContainer.appendChild(testimonialItem);
-            });
-        }
-
-        // Render blog posts
-        function renderBlog() {
-            const blogGrid = document.getElementById('blog-grid');
-            blogGrid.innerHTML = '';
-            
-            websiteData.blog.forEach(post => {
-                const blogItem = document.createElement('div');
-                blogItem.className = 'blog-card';
-                blogItem.innerHTML = `
-                    <div class="blog-img">
-                        <img src="${post.image}" alt="${post.title}">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> ${new Date(post.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                            <span><i class="far fa-folder"></i> ${post.category}</span>
-                        </div>
-                        <h4>${post.title}</h4>
-                        <p>${post.excerpt}</p>
-                        <a href="#" class="btn btn-outline">Baca Selengkapnya</a>
-                    </div>
-                `;
-                blogGrid.appendChild(blogItem);
-            });
-        }
-
-        // Render admin portfolio list
-        function renderAdminPortfolio() {
-            const portfolioList = document.getElementById('portfolio-list');
-            portfolioList.innerHTML = '';
-            
-            websiteData.portfolio.forEach(project => {
-                const item = document.createElement('div');
-                item.className = 'content-item';
-                item.innerHTML = `
-                    <div>
-                        <strong>${project.title}</strong>
-                        <p>${project.category} | ${project.location}</p>
-                    </div>
-                    <div class="content-actions">
-                        <button class="btn btn-outline edit-portfolio" data-id="${project.id}">Edit</button>
-                        <button class="btn btn-outline delete-portfolio" data-id="${project.id}">Hapus</button>
-                    </div>
-                `;
-                portfolioList.appendChild(item);
-            });
-            
-            // Add event listeners for edit and delete buttons
-            document.querySelectorAll('.edit-portfolio').forEach(button => {
-                button.addEventListener('click', function() {
-                    const id = parseInt(this.getAttribute('data-id'));
-                    const project = websiteData.portfolio.find(p => p.id === id);
-                    
-                    document.getElementById('project-title').value = project.title;
-                    document.getElementById('project-location').value = project.location;
-                    document.getElementById('project-description').value = project.description;
-                    document.getElementById('project-category').value = project.category;
-                    document.getElementById('project-image').value = project.image;
-                    
-                    // Store the ID for update
-                    document.getElementById('portfolio-form').setAttribute('data-edit-id', id);
-                });
-            });
-            
-            document.querySelectorAll('.delete-portfolio').forEach(button => {
-                button.addEventListener('click', function() {
-                    if (confirm('Apakah Anda yakin ingin menghapus proyek ini?')) {
-                        const id = parseInt(this.getAttribute('data-id'));
-                        websiteData.portfolio = websiteData.portfolio.filter(p => p.id !== id);
-                        saveData();
-                        renderPortfolio();
-                        renderAdminPortfolio();
-                    }
-                });
-            });
-        }
-
-        // Render admin testimonials list
-        function renderAdminTestimonials() {
-            const testimonialList = document.getElementById('testimonial-list');
-            testimonialList.innerHTML = '';
-            
-            websiteData.testimonials.forEach(testimonial => {
-                const item = document.createElement('div');
-                item.className = 'content-item';
-                item.innerHTML = `
-                    <div>
-                        <strong>${testimonial.name}</strong>
-                        <p>${testimonial.position}</p>
-                    </div>
-                    <div class="content-actions">
-                        <button class="btn btn-outline edit-testimonial" data-id="${testimonial.id}">Edit</button>
-                        <button class="btn btn-outline delete-testimonial" data-id="${testimonial.id}">Hapus</button>
-                    </div>
-                `;
-                testimonialList.appendChild(item);
-            });
-            
-            // Add event listeners for edit and delete buttons
-            document.querySelectorAll('.edit-testimonial').forEach(button => {
-                button.addEventListener('click', function() {
-                    const id = parseInt(this.getAttribute('data-id'));
-                    const testimonial = websiteData.testimonials.find(t => t.id === id);
-                    
-                    document.getElementById('testimonial-name').value = testimonial.name;
-                    document.getElementById('testimonial-position').value = testimonial.position;
-                    document.getElementById('testimonial-content').value = testimonial.content;
-                    document.getElementById('testimonial-image').value = testimonial.image;
-                    
-                    // Store the ID for update
-                    document.getElementById('testimonial-form').setAttribute('data-edit-id', id);
-                });
-            });
-            
-            document.querySelectorAll('.delete-testimonial').forEach(button => {
-                button.addEventListener('click', function() {
-                    if (confirm('Apakah Anda yakin ingin menghapus testimoni ini?')) {
-                        const id = parseInt(this.getAttribute('data-id'));
-                        websiteData.testimonials = websiteData.testimonials.filter(t => t.id !== id);
-                        saveData();
-                        renderTestimonials();
-                        renderAdminTestimonials();
-                    }
-                });
-            });
-        }
-
-        // Render admin blog list
-        function renderAdminBlog() {
-            const blogList = document.getElementById('blog-list');
-            blogList.innerHTML = '';
-            
-            websiteData.blog.forEach(post => {
-                const item = document.createElement('div');
-                item.className = 'content-item';
-                item.innerHTML = `
-                    <div>
-                        <strong>${post.title}</strong>
-                        <p>${post.category} | ${new Date(post.date).toLocaleDateString('id-ID')}</p>
-                    </div>
-                    <div class="content-actions">
-                        <button class="btn btn-outline edit-blog" data-id="${post.id}">Edit</button>
-                        <button class="btn btn-outline delete-blog" data-id="${post.id}">Hapus</button>
-                    </div>
-                `;
-                blogList.appendChild(item);
-            });
-            
-            // Add event listeners for edit and delete buttons
-            document.querySelectorAll('.edit-blog').forEach(button => {
-                button.addEventListener('click', function() {
-                    const id = parseInt(this.getAttribute('data-id'));
-                    const post = websiteData.blog.find(p => p.id === id);
-                    
-                    document.getElementById('blog-title').value = post.title;
-                    document.getElementById('blog-excerpt').value = post.excerpt;
-                    document.getElementById('blog-content').value = post.content;
-                    document.getElementById('blog-image').value = post.image;
-                    document.getElementById('blog-category').value = post.category;
-                    
-                    // Store the ID for update
-                    document.getElementById('blog-form').setAttribute('data-edit-id', id);
-                });
-            });
-            
-            document.querySelectorAll('.delete-blog').forEach(button => {
-                button.addEventListener('click', function() {
-                    if (confirm('Apakah Anda yakin ingin menghapus artikel ini?')) {
-                        const id = parseInt(this.getAttribute('data-id'));
-                        websiteData.blog = websiteData.blog.filter(p => p.id !== id);
-                        saveData();
-                        renderBlog();
-                        renderAdminBlog();
-                    }
-                });
-            });
-        }
-
-        // Initialize the website
-        function initWebsite() {
-            renderPortfolio();
-            renderTestimonials();
-            renderBlog();
-        }
-
-        // Initialize admin panel
-        function initAdmin() {
-            renderAdminPortfolio();
-            renderAdminTestimonials();
-            renderAdminBlog();
-            
-            // Admin tab switching
-            document.querySelectorAll('.admin-tab').forEach(tab => {
-                tab.addEventListener('click', function() {
-                    document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    const tabId = this.getAttribute('data-tab');
-                    document.querySelectorAll('.admin-section').forEach(section => {
-                        section.classList.remove('active');
-                    });
-                    document.getElementById(`${tabId}-section`).classList.add('active');
-                });
-            });
-            
-            // Portfolio form submission
-            document.getElementById('portfolio-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const id = this.getAttribute('data-edit-id');
-                const title = document.getElementById('project-title').value;
-                const location = document.getElementById('project-location').value;
-                const description = document.getElementById('project-description').value;
-                const category = document.getElementById('project-category').value;
-                const image = document.getElementById('project-image').value;
-                
-                if (id) {
-                    // Edit existing project
-                    const index = websiteData.portfolio.findIndex(p => p.id === parseInt(id));
-                    if (index !== -1) {
-                        websiteData.portfolio[index] = {
-                            ...websiteData.portfolio[index],
-                            title,
-                            location,
-                            description,
-                            category,
-                            image
-                        };
-                    }
-                } else {
-                    // Add new project
-                    websiteData.portfolio.push({
-                        id: Date.now(),
-                        title,
-                        location,
-                        description,
-                        category,
-                        image
-                    });
-                }
-                
-                saveData();
-                renderPortfolio();
-                renderAdminPortfolio();
-                
-                // Reset form
-                this.reset();
-                this.removeAttribute('data-edit-id');
-            });
-            
-            // Testimonial form submission
-            document.getElementById('testimonial-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const id = this.getAttribute('data-edit-id');
-                const name = document.getElementById('testimonial-name').value;
-                const position = document.getElementById('testimonial-position').value;
-                const content = document.getElementById('testimonial-content').value;
-                const image = document.getElementById('testimonial-image').value;
-                
-                if (id) {
-                    // Edit existing testimonial
-                    const index = websiteData.testimonials.findIndex(t => t.id === parseInt(id));
-                    if (index !== -1) {
-                        websiteData.testimonials[index] = {
-                            ...websiteData.testimonials[index],
-                            name,
-                            position,
-                            content,
-                            image
-                        };
-                    }
-                } else {
-                    // Add new testimonial
-                    websiteData.testimonials.push({
-                        id: Date.now(),
-                        name,
-                        position,
-                        content,
-                        image
-                    });
-                }
-                
-                saveData();
-                renderTestimonials();
-                renderAdminTestimonials();
-                
-                // Reset form
-                this.reset();
-                this.removeAttribute('data-edit-id');
-            });
-            
-            // Blog form submission
-            document.getElementById('blog-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const id = this.getAttribute('data-edit-id');
-                const title = document.getElementById('blog-title').value;
-                const excerpt = document.getElementById('blog-excerpt').value;
-                const content = document.getElementById('blog-content').value;
-                const image = document.getElementById('blog-image').value;
-                const category = document.getElementById('blog-category').value;
-                const date = new Date().toISOString().split('T')[0];
-                
-                if (id) {
-                    // Edit existing blog post
-                    const index = websiteData.blog.findIndex(p => p.id === parseInt(id));
-                    if (index !== -1) {
-                        websiteData.blog[index] = {
-                            ...websiteData.blog[index],
-                            title,
-                            excerpt,
-                            content,
-                            image,
-                            category,
-                            date
-                        };
-                    }
-                } else {
-                    // Add new blog post
-                    websiteData.blog.push({
-                        id: Date.now(),
-                        title,
-                        excerpt,
-                        content,
-                        image,
-                        category,
-                        date
-                    });
-                }
-                
-                saveData();
-                renderBlog();
-                renderAdminBlog();
-                
-                // Reset form
-                this.reset();
-                this.removeAttribute('data-edit-id');
-            });
-            
-            // Contact form submission
-            document.getElementById('contact-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Pesan Anda telah dikirim! Kami akan segera menghubungi Anda.');
-                this.reset();
-            });
-        }
-
         // Admin login
         document.getElementById('admin-login').addEventListener('click', function(e) {
             e.preventDefault();
-            document.querySelector('.login-modal').style.display = 'flex';
+            document.getElementById('login-modal').style.display = 'flex';
         });
 
-        document.getElementById('admin-login-form').addEventListener('submit', function(e) {
+        function closeLogin() {
+            document.getElementById('login-modal').style.display = 'none';
+        }
+
+        document.getElementById('login-form').addEventListener('submit', function(e) {
             e.preventDefault();
+            // Simple authentication (in production, use proper backend authentication)
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
             
-            const username = document.getElementById('admin-username').value;
-            const password = document.getElementById('admin-password').value;
-            
-            if (username === 'admin' && password === 'sandi') {
-                document.querySelector('.login-modal').style.display = 'none';
-                document.querySelector('.admin-panel').style.display = 'flex';
-                initAdmin();
+            if (username === 'admin' && password === 'admin123') {
+                closeLogin();
+                document.getElementById('admin-panel').style.display = 'flex';
             } else {
                 alert('Username atau password salah!');
             }
         });
 
-        // Close admin panel
-        document.querySelector('.admin-close').addEventListener('click', function() {
-            document.querySelector('.admin-panel').style.display = 'none';
-        });
+        function closeAdmin() {
+            document.getElementById('admin-panel').style.display = 'none';
+        }
 
-        // Close login modal
-        document.querySelector('.login-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.style.display = 'none';
+        function switchTab(tabName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.admin-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.admin-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            const loginModal = document.getElementById('login-modal');
+            const adminPanel = document.getElementById('admin-panel');
+            
+            if (e.target === loginModal) {
+                closeLogin();
+            }
+            if (e.target === adminPanel) {
+                closeAdmin();
             }
         });
 
@@ -1744,11 +1476,17 @@
             });
         });
 
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah dikirim. Kami akan segera menghubungi Anda.');
+            this.reset();
+        });
+
         // Initialize the website when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            initWebsite();
+            console.log('Website loaded successfully!');
         });
     </script>
 </body>
 </html>
-
