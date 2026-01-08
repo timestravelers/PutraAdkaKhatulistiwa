@@ -1,1492 +1,785 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Putra Adka Khatulistiwa - Jasa Konstruksi, Desain Interior, dan Perencanaan Bangunan Profesional di Indonesia">
-    <meta name="keywords" content="arsitek, konstruksi, desain interior, jasa bangunan, konsultan arsitek, Putra Adka Khatulistiwa">
-    <meta name="author" content="Putra Adka Khatulistiwa">
-    <title>Putra Adka Khatulistiwa - Jasa Konstruksi & Desain Interior Profesional</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/0kLcYdF.png">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary: #1a1a1a;
-            --secondary: #ff4d4d;
-            --accent: #00d4ff;
-            --dark: #0f0f0f;
-            --light: #ffffff;
-            --gray: #808080;
-            --gray-light: #f5f5f5;
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--primary);
-            line-height: 1.6;
-            background-color: var(--light);
-            overflow-x: hidden;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .section {
-            padding: 5rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-size: 3rem;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-            font-weight: 700;
-            letter-spacing: -1px;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: var(--secondary);
-            border-radius: 2px;
-        }
-        
-        .section-title p {
-            color: var(--gray);
-            max-width: 600px;
-            margin: 2rem auto 0;
-            font-size: 1.1rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 0;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            transition: var(--transition);
-            border: 2px solid var(--primary);
-            font-size: 0.9rem;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background: var(--secondary);
-            border-color: var(--secondary);
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: var(--secondary);
-            border-color: var(--secondary);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        /* Header Styles */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: white;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-            z-index: 1000;
-            transition: var(--transition);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            gap: 0.8rem;
-        }
-        
-        .logo img {
-            height: 45px;
-            width: auto;
-        }
-        
-        .logo h1 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-            font-size: 0.95rem;
-        }
-        
-        nav ul li a:hover {
-            color: var(--secondary);
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
-            transition: var(--transition);
-        }
-        
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-        
-        .mobile-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-            position: relative;
-            overflow: hidden;
-            margin-top: 70px;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: url('https://i.imgur.com/0kLcYdF.png') no-repeat center right/contain;
-            opacity: 0.08;
-            z-index: 0;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            height: 100%;
-            display: flex;
-            align-items: center;
-        }
-        
-        .hero-text {
-            max-width: 600px;
-        }
-        
-        .hero-text h1 {
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-        
-        .hero-text p {
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-            color: var(--gray);
-            line-height: 1.8;
-        }
-        
-        .hero-btns {
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .about-img {
-            border-radius: 0;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        .about-img::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            border: 3px solid var(--secondary);
-            z-index: -1;
-        }
-        
-        .about-img img {
-            width: 100%;
-            display: block;
-            transition: var(--transition);
-        }
-        
-        .about-img:hover img {
-            transform: scale(1.02);
-        }
-        
-        .about-text h3 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: var(--gray);
-            line-height: 1.8;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .feature {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-        }
-        
-        .feature i {
-            font-size: 1.8rem;
-            color: var(--secondary);
-            min-width: 30px;
-        }
-        
-        .feature h4 {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-        
-        .feature p {
-            color: var(--gray);
-            font-size: 0.95rem;
-        }
-        
-        /* Portfolio Section */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-        
-        .portfolio-item {
-            border-radius: 0;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .portfolio-item:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-        }
-        
-        .portfolio-img {
-            height: 280px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .portfolio-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .portfolio-item:hover .portfolio-img img {
-            transform: scale(1.08);
-        }
-        
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        
-        .portfolio-overlay i {
-            color: white;
-            font-size: 2.5rem;
-        }
-        
-        .portfolio-content {
-            padding: 2rem;
-            background: white;
-        }
-        
-        .portfolio-content h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-            font-weight: 600;
-        }
-        
-        .portfolio-content p {
-            color: var(--gray);
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-        
-        .portfolio-category {
-            display: inline-block;
-            background: var(--gray-light);
-            color: var(--secondary);
-            padding: 0.4rem 1rem;
-            border-radius: 0;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        /* Testimonials Section */
-        .testimonials-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .testimonial {
-            background: white;
-            border-radius: 0;
-            padding: 2.5rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            margin-bottom: 2rem;
-            position: relative;
-            border-left: 4px solid var(--secondary);
-        }
-        
-        .testimonial::before {
-            content: '\201C';
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-size: 3.5rem;
-            color: var(--secondary);
-            opacity: 0.15;
-            font-family: serif;
-        }
-        
-        .testimonial-content {
-            margin-top: 1rem;
-        }
-        
-        .testimonial-content p {
-            font-style: italic;
-            color: var(--gray);
-            line-height: 1.8;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            margin-top: 1.5rem;
-        }
-        
-        .testimonial-author img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 1rem;
-        }
-        
-        .author-info h5 {
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 0.2rem;
-        }
-        
-        .author-info p {
-            color: var(--gray);
-            font-size: 0.85rem;
-        }
-        
-        /* Blog Section */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-        
-        .blog-card {
-            border-radius: 0;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-        
-        .blog-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-        }
-        
-        .blog-img {
-            height: 250px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .blog-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .blog-card:hover .blog-img img {
-            transform: scale(1.08);
-        }
-        
-        .blog-content {
-            padding: 2rem;
-            background: white;
-        }
-        
-        .blog-meta {
-            display: flex;
-            gap: 1rem;
-            color: var(--gray);
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .blog-content h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            color: var(--primary);
-            font-weight: 600;
-        }
-        
-        .blog-content p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        
-        .blog-link {
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .blog-link:hover {
-            gap: 1rem;
-        }
-        
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-        
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: var(--primary);
-            font-weight: 700;
-        }
-        
-        .contact-item {
-            margin-bottom: 2.5rem;
-        }
-        
-        .contact-item i {
-            font-size: 1.5rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-        
-        .contact-item h4 {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-        
-        .contact-item p {
-            color: var(--gray);
-            line-height: 1.8;
-        }
-        
-        .contact-form {
-            background: var(--gray-light);
-            padding: 2.5rem;
-            border-radius: 0;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: none;
-            border-bottom: 2px solid #ddd;
-            background: transparent;
-            font-family: 'Poppins', sans-serif;
-            transition: var(--transition);
-            color: var(--primary);
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-bottom-color: var(--secondary);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 3rem 0 1.5rem;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        .footer-section p {
-            color: #ccc;
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-section ul li a {
-            color: #ccc;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .footer-section ul li a:hover {
-            color: var(--secondary);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 0;
-            color: white;
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-        
-        /* Admin Panel */
-        .admin-panel {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .admin-content {
-            background: white;
-            width: 90%;
-            max-width: 800px;
-            border-radius: 0;
-            overflow: hidden;
-        }
-        
-        .admin-header {
-            background: var(--primary);
-            color: white;
-            padding: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .admin-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        .admin-body {
-            padding: 2rem;
-        }
-        
-        .admin-tabs {
-            display: flex;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 1rem;
-        }
-        
-        .admin-tab {
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            margin-right: 1rem;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-        
-        .admin-tab.active {
-            border-color: var(--secondary);
-            color: var(--secondary);
-        }
-        
-        .admin-section {
-            display: none;
-        }
-        
-        .admin-section.active {
-            display: block;
-        }
-        
-        .content-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 0;
-            margin-bottom: 1rem;
-        }
-        
-        .content-actions {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        /* Login Modal */
-        .login-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .login-content {
-            background: white;
-            width: 90%;
-            max-width: 400px;
-            border-radius: 0;
-            overflow: hidden;
-        }
-        
-        .login-header {
-            background: var(--primary);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .login-body {
-            padding: 2rem;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-text h1 {
-                font-size: 3rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.5rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-toggle {
-                display: block;
-            }
-            
-            nav ul {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                padding: 1rem 0;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-                transition: var(--transition);
-                transform: translateY(-100%);
-                gap: 0;
-            }
-            
-            nav ul li {
-                width: 100%;
-                text-align: center;
-                padding: 1rem 0;
-            }
-            
-            nav ul.active {
-                transform: translateY(0);
-            }
-            
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
-            
-            .portfolio-grid,
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero-text h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.5rem;
-            }
-            
-            .section-title h2::after {
-                width: 60px;
-            }
-            
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .hero {
-                margin-top: 60px;
-            }
-            
-            .section {
-                padding: 3rem 0;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IQ-TV | Dynamic M3U Loader</title>
+  <link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f0f12;
+      --sidebar-bg: #121215;
+      --text: #ffffff;
+      --accent: #4a90e2;
+      --hover: #2a2a30;
+      --border: #333;
+      --card-bg: #1a1a1f;
+      --highlight: #ffcc00;
+      --transition: all 0.2s ease;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 240px;
+      background: var(--sidebar-bg);
+      padding: 20px 0;
+      overflow-y: auto;
+      border-right: 1px solid var(--border);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 60px;
+        padding: 10px 0;
+      }
+    }
+
+    .logo {
+      padding: 20px 20px 20px 30px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: var(--transition);
+    }
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 1rem;
+        padding: 10px 10px;
+        text-align: center;
+      }
+    }
+
+    .m3u-input-box {
+      padding: 15px;
+      background: var(--card-bg);
+      margin: 15px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    @media (max-width: 768px) {
+      .m3u-input-box {
+        margin: 10px;
+      }
+    }
+
+    .m3u-input-box input {
+      width: 100%;
+      padding: 10px;
+      background: var(--hover);
+      border: none;
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .m3u-input-box button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      background: var(--accent);
+      border: none;
+      border-radius: 6px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .m3u-input-box button:hover {
+      background: #3a7bd5;
+    }
+
+    .category-list {
+      padding: 0 10px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .menu-item {
+      padding: 12px 20px 12px 30px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-left: 4px solid transparent;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    @media (max-width: 768px) {
+      .menu-item {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+      }
+    }
+
+    .menu-item:hover, .menu-item.active {
+      background: var(--hover);
+      border-left-color: var(--accent);
+    }
+
+    .search-box {
+      margin: 15px 20px;
+      padding: 10px;
+      background: var(--card-bg);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    @media (max-width: 768px) {
+      .search-box {
+        margin: 10px;
+      }
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 8px;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .clear-btn {
+      padding: 8px 15px;
+      background: var(--hover);
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 15px 20px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    @media (max-width: 768px) {
+      .clear-btn {
+        margin: 10px;
+        font-size: 0.9rem;
+      }
+    }
+    .clear-btn:hover {
+      background: #333;
+    }
+
+    /* MAIN CONTENT */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    @media (max-width: 768px) {
+      .main-content {
+        padding: 10px;
+      }
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+
+    .header h1 {
+      font-size: 1.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: var(--transition);
+    }
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 1.2rem;
+      }
+    }
+
+    .stats-panel {
+      width: 280px;
+      background: var(--card-bg);
+      padding: 15px;
+      border-radius: 8px;
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      transition: var(--transition);
+    }
+    @media (max-width: 768px) {
+      .stats-panel {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 15px;
+      }
+    }
+
+    .stat-box {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .stat-box:last-child {
+      border-bottom: none;
+    }
+
+    .tips-panel {
+      background: var(--card-bg);
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      transition: var(--transition);
+    }
+    @media (max-width: 768px) {
+      .tips-panel {
+        margin-top: 15px;
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+    }
+
+    .tips-panel h3 {
+      margin-bottom: 10px;
+      color: var(--accent);
+      transition: var(--transition);
+    }
+
+    .tips-panel ul {
+      padding-left: 20px;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      transition: var(--transition);
+    }
+    .tips-panel li {
+      margin-bottom: 5px;
+    }
+
+    /* PLAYER CONTAINER */
+    .player-container {
+      flex: 1;
+      background: #000;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+      transition: var(--transition);
+    }
+    @media (max-width: 768px) {
+      .player-container {
+        min-height: 200px;
+      }
+    }
+
+    .player-placeholder {
+      text-align: center;
+      color: #888;
+      font-size: 1.2rem;
+      padding: 20px;
+      transition: var(--transition);
+    }
+
+    /* CHANNELS GRID */
+    .channels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+      padding: 10px;
+      overflow-y: auto;
+      max-height: 30vh;
+      transition: var(--transition);
+    }
+    @media (max-width: 768px) {
+      .channels-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        max-height: 25vh;
+        gap: 10px;
+      }
+    }
+
+    .channel-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 10px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--border);
+    }
+    .channel-card:hover {
+      background: var(--hover);
+      transform: scale(1.02);
+      border-color: var(--accent);
+    }
+    @media (max-width: 768px) {
+      .channel-card {
+        padding: 8px;
+        gap: 8px;
+      }
+    }
+
+    .channel-thumb {
+      width: 40px;
+      height: 40px;
+      background: #333;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--highlight);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .channel-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+
+    .channel-info {
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: var(--transition);
+    }
+
+    .channel-name {
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    @media (max-width: 768px) {
+      .channel-name {
+        font-size: 0.85rem;
+      }
+    }
+
+    .channel-res {
+      font-size: 0.7rem;
+      color: var(--highlight);
+      transition: var(--transition);
+    }
+
+    /* FOOTER */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background: var(--sidebar-bg);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    @media (max-width: 768px) {
+      .footer {
+        flex-direction: column;
+        gap: 5px;
+        padding: 8px 10px;
+        font-size: 0.75rem;
+      }
+    }
+
+    /* VIDEO.JS STYLES */
+    .video-js .vjs-big-play-button {
+      font-size: 3em;
+      line-height: 1.5em;
+      height: 1.5em;
+      width: 1.5em;
+      border: 0.06666em solid #fff;
+      border-radius: 0.3em;
+      transition: var(--transition);
+    }
+    .video-js .vjs-control-bar {
+      background: rgba(0,0,0,0.7);
+      transition: var(--transition);
+    }
+
+    /* LOADER / SPINNER */
+    .loader {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top: 3px solid var(--accent);
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo">
-                <img src="https://i.imgur.com/0kLcYdF.png" alt="Putra Adka Khatulistiwa Logo">
-                <h1>Putra Adka Khatulistiwa</h1>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#home">Beranda</a></li>
-                    <li><a href="#about">Tentang</a></li>
-                    <li><a href="#portfolio">Portofolio</a></li>
-                    <li><a href="#testimonials">Testimoni</a></li>
-                    <li><a href="#blog">Tips & Trik</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                    <li><a href="#" id="admin-login">Admin</a></li>
-                </ul>
-                <div class="mobile-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
-    </header>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">IQ-TV</div>
+    <div class="m3u-input-box">
+      <input type="url" id="m3uUrlInput" placeholder="https://example.com/playlist.m3u" />
+      <button id="loadPlaylistBtn">▶️ Load Playlist</button>
+    </div>
+    <div class="category-list" id="categoryList">
+      <div class="menu-item active" data-category="all">All Channels</div>
+    </div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search channels..." />
+    </div>
+    <div class="clear-btn" id="clearPlaylist">Clear Playlist</div>
+  </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h1>Transformasi Ruang Menjadi Pengalaman Tak Terlupakan</h1>
-                <p>Putra Adka Khatulistiwa: Ahli dalam konstruksi, desain interior, dan perencanaan bangunan yang menggabungkan keindahan, fungsionalitas, dan keberlanjutan</p>
-                <div class="hero-btns">
-                    <a href="#portfolio" class="btn">Lihat Portofolio</a>
-                    <a href="#contact" class="btn btn-outline">Hubungi Kami</a>
-                </div>
-            </div>
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="header">
+      <h1 id="playlistName">jon.m3u</h1>
+      <div class="stats-panel">
+        <h3>📊 Statistik Cepat</h3>
+        <div class="stat-box">
+          <span>Total Saluran</span>
+          <span id="totalChannels">-</span>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tentang Kami</h2>
-                <p>Kami adalah tim profesional yang berdedikasi menciptakan ruang yang tidak hanya indah tetapi juga bermakna</p>
-            </div>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://i.imgur.com/0kLcYdF.png" alt="Tim Putra Adka Khatulistiwa">
-                </div>
-                <div class="about-text">
-                    <h3>Sejak 2010, Mewujudkan Impian Arsitektur Anda</h3>
-                    <p>Putra Adka Khatulistiwa berdiri sejak 2010 dengan visi menciptakan ruang yang harmonis antara manusia, lingkungan, dan budaya. Kami telah menyelesaikan lebih dari 200 proyek di seluruh Indonesia dengan berbagai skala dan kompleksitas.</p>
-                    <p>Tim kami terdiri dari arsitek berpengalaman, desainer interior kreatif, dan insinyur konstruksi yang kompeten. Kami berkomitmen untuk memberikan solusi yang inovatif, berkelanjutan, dan sesuai dengan kebutuhan klien.</p>
-                    
-                    <div class="features">
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Profesional</h4>
-                                <p>Tim berpengalaman dengan sertifikasi resmi</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-award"></i>
-                            <div>
-                                <h4>Berpengalaman</h4>
-                                <p>Lebih dari 200 proyek sukses</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-lightbulb"></i>
-                            <div>
-                                <h4>Inovatif</h4>
-                                <p>Solusi kreatif dan berkelanjutan</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-handshake"></i>
-                            <div>
-                                <h4>Terpercaya</h4>
-                                <p>Komitmen penuh terhadap klien</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="stat-box">
+          <span>Kategori</span>
+          <span id="totalCategories">-</span>
         </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section" style="background: var(--gray-light);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Portofolio Kami</h2>
-                <p>Koleksi proyek-proyek terbaik yang telah kami wujudkan dengan dedikasi dan profesionalisme</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Proyek 1">
-                        <div class="portfolio-overlay">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h4>Gedung Perkantoran Modern</h4>
-                        <p>Desain arsitektur kontemporer dengan fokus pada efisiensi energi dan kenyamanan pengguna</p>
-                        <span class="portfolio-category">Arsitektur</span>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Proyek 2">
-                        <div class="portfolio-overlay">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h4>Interior Retail Premium</h4>
-                        <p>Transformasi ruang retail dengan konsep modern yang meningkatkan pengalaman pelanggan</p>
-                        <span class="portfolio-category">Interior Design</span>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Proyek 3">
-                        <div class="portfolio-overlay">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <h4>Kompleks Residensial</h4>
-                        <p>Pengembangan hunian berkualitas dengan fasilitas lengkap dan desain yang humanis</p>
-                        <span class="portfolio-category">Konstruksi</span>
-                    </div>
-                </div>
-            </div>
+        <div class="stat-box">
+          <span>Filter Aktif</span>
+          <span id="activeFilter">All</span>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Testimoni Klien</h2>
-                <p>Kepercayaan dan kepuasan klien adalah kesuksesan kami</p>
-            </div>
-            <div class="testimonials-container">
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>Putra Adka Khatulistiwa telah membantu kami mewujudkan visi kantor impian. Tim mereka sangat profesional dan responsif terhadap setiap kebutuhan kami.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Klien 1">
-                        <div class="author-info">
-                            <h5>Budi Santoso</h5>
-                            <p>Direktur PT. Maju Jaya</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>Hasil desain interior mereka melebihi ekspektasi kami. Perhatian terhadap detail dan kualitas material sangat mengesankan.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Klien 2">
-                        <div class="author-info">
-                            <h5>Siti Nurhaliza</h5>
-                            <p>Pemilik Boutique Hotel</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>Dari konsep hingga eksekusi, tim Putra Adka Khatulistiwa menunjukkan dedikasi luar biasa. Proyek kami selesai tepat waktu dengan kualitas terbaik.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Klien 3">
-                        <div class="author-info">
-                            <h5>Ahmad Wijaya</h5>
-                            <p>Manajer Proyek Konstruksi</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="section" style="background: var(--gray-light);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tips & Trik Desain</h2>
-                <p>Panduan dan inspirasi untuk menciptakan ruang yang sempurna</p>
-            </div>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-img">
-                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Blog 1">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar"></i> 15 Des 2024</span>
-                            <span><i class="fas fa-user"></i> Admin</span>
-                        </div>
-                        <h4>Tren Desain Interior 2024</h4>
-                        <p>Pelajari tren desain interior terkini yang akan mendominasi tahun ini, dari warna hingga material pilihan.</p>
-                        <a href="#" class="blog-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-img">
-                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Blog 2">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar"></i> 10 Des 2024</span>
-                            <span><i class="fas fa-user"></i> Admin</span>
-                        </div>
-                        <h4>Memaksimalkan Ruang Kecil</h4>
-                        <p>Strategi dan tips praktis untuk membuat ruang kecil terasa lebih luas dan nyaman dengan desain yang tepat.</p>
-                        <a href="#" class="blog-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-img">
-                        <img src="https://i.imgur.com/0kLcYdF.png" alt="Blog 3">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar"></i> 5 Des 2024</span>
-                            <span><i class="fas fa-user"></i> Admin</span>
-                        </div>
-                        <h4>Keberlanjutan dalam Desain</h4>
-                        <p>Bagaimana memilih material ramah lingkungan dan menciptakan desain yang berkelanjutan untuk masa depan.</p>
-                        <a href="#" class="blog-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Hubungi Kami</h2>
-                <p>Siap membantu mewujudkan proyek impian Anda</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Informasi Kontak</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h4>Alamat</h4>
-                        <p>Jl. Sudirman No. 123<br>Jakarta Selatan 12345<br>Indonesia</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <h4>Telepon</h4>
-                        <p>+62 21 1234 5678<br>+62 812 3456 7890</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <h4>Email</h4>
-                        <p>info@putraadka.com<br>project@putraadka.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <h4>Jam Kerja</h4>
-                        <p>Senin - Jumat: 08:00 - 17:00<br>Sabtu: 09:00 - 13:00<br>Minggu: Tutup</p>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nama Lengkap</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Telepon</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Pesan</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Kirim Pesan</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Tentang Kami</h4>
-                    <p>Putra Adka Khatulistiwa adalah konsultan arsitektur dan desain interior terpercaya dengan pengalaman lebih dari 10 tahun melayani klien di seluruh Indonesia.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Layanan</h4>
-                    <ul>
-                        <li><a href="#portfolio">Arsitektur</a></li>
-                        <li><a href="#portfolio">Desain Interior</a></li>
-                        <li><a href="#portfolio">Konstruksi</a></li>
-                        <li><a href="#portfolio">Konsultasi</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Navigasi</h4>
-                    <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#about">Tentang Kami</a></li>
-                        <li><a href="#portfolio">Portofolio</a></li>
-                        <li><a href="#contact">Kontak</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Kontak</h4>
-                    <p>Jl. Sudirman No. 123<br>Jakarta Selatan 12345</p>
-                    <p>+62 21 1234 5678<br>info@putraadka.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Putra Adka Khatulistiwa. Semua hak dilindungi. | <a href="#" style="color: #aaa;">Kebijakan Privasi</a> | <a href="#" style="color: #aaa;">Syarat & Ketentuan</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Admin Panel -->
-    <div class="admin-panel" id="admin-panel">
-        <div class="admin-content">
-            <div class="admin-header">
-                <h2>Admin Panel</h2>
-                <button class="admin-close" onclick="closeAdmin()">&times;</button>
-            </div>
-            <div class="admin-body">
-                <div class="admin-tabs">
-                    <div class="admin-tab active" onclick="switchTab('portfolio')">Portfolio</div>
-                    <div class="admin-tab" onclick="switchTab('testimonials')">Testimoni</div>
-                    <div class="admin-tab" onclick="switchTab('blog')">Blog</div>
-                </div>
-                
-                <div id="portfolio" class="admin-section active">
-                    <h3>Kelola Portfolio</h3>
-                    <div class="form-group">
-                        <label>Judul Proyek</label>
-                        <input type="text" placeholder="Masukkan judul proyek">
-                    </div>
-                    <div class="form-group">
-                        <label>Deskripsi</label>
-                        <textarea placeholder="Masukkan deskripsi proyek"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Kategori</label>
-                        <select>
-                            <option>Arsitektur</option>
-                            <option>Interior Design</option>
-                            <option>Konstruksi</option>
-                        </select>
-                    </div>
-                    <button class="btn">Tambah Portfolio</button>
-                    
-                    <div class="portfolio-list">
-                        <h4>Daftar Portfolio</h4>
-                        <div class="content-item">
-                            <span>Gedung Perkantoran Modern</span>
-                            <div class="content-actions">
-                                <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Edit</button>
-                                <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Hapus</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="testimonials" class="admin-section">
-                    <h3>Kelola Testimoni</h3>
-                    <div class="form-group">
-                        <label>Nama Klien</label>
-                        <input type="text" placeholder="Masukkan nama klien">
-                    </div>
-                    <div class="form-group">
-                        <label>Testimoni</label>
-                        <textarea placeholder="Masukkan testimoni"></textarea>
-                    </div>
-                    <button class="btn">Tambah Testimoni</button>
-                    
-                    <div class="testimonial-list">
-                        <h4>Daftar Testimoni</h4>
-                        <div class="content-item">
-                            <span>Budi Santoso - Direktur PT. Maju Jaya</span>
-                            <div class="content-actions">
-                                <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Edit</button>
-                                <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Hapus</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="blog" class="admin-section">
-                    <h3>Kelola Blog</h3>
-                    <div class="form-group">
-                        <label>Judul Artikel</label>
-                        <input type="text" placeholder="Masukkan judul artikel">
-                    </div>
-                    <div class="form-group">
-                        <label>Konten</label>
-                        <textarea placeholder="Masukkan konten artikel"></textarea>
-                    </div>
-                    <button class="btn">Tambah Artikel</button>
-                    
-                    <div class="blog-list">
-                        <h4>Daftar Artikel</h4>
-                        <div class="content-item">
-                            <span>Tren Desain Interior 2024</span>
-                            <div class="content-actions">
-                                <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Edit</button>
-                                <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Hapus</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
-    <!-- Login Modal -->
-    <div class="login-modal" id="login-modal">
-        <div class="login-content">
-            <div class="login-header">
-                <h2>Admin Login</h2>
-            </div>
-            <div class="login-body">
-                <form id="login-form">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" name="username" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%;">Login</button>
-                </form>
-                <button class="btn btn-outline" style="width: 100%; margin-top: 1rem;" onclick="closeLogin()">Batal</button>
-            </div>
-        </div>
+    <div class="player-container" id="playerContainer">
+      <div class="player-placeholder">Pilih saluran untuk mulai menonton</div>
     </div>
 
-    <script>
-        // Admin login
-        document.getElementById('admin-login').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('login-modal').style.display = 'flex';
-        });
+    <div class="tips-panel">
+      <h3>💡 Tips Streaming</h3>
+      <ul>
+        <li>Gunakan <b>Load Playlist</b> untuk muat URL M3U (.m3u/.m3u8).</li>
+        <li>Parsing otomatis: <code>tvg-logo</code>, <code>group-title</code>, resolusi.</li>
+        <li>Klik saluran → langsung streaming (HLS/MPEG-DASH/MP4).</li>
+        <li>Data tersimpan di browser. Tutup & buka lagi tetap ada.</li>
+      </ul>
+    </div>
 
-        function closeLogin() {
-            document.getElementById('login-modal').style.display = 'none';
+    <div class="channels-grid" id="channelsGrid"></div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>©2026 Creativityright • M. Thorik | Donasi: DANA 087888879016</span>
+    <span id="current-time">Loading...</span>
+  </div>
+
+  <!-- Video.js Player -->
+  <script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
+
+  <script>
+    // ===== INITIAL CONFIG =====
+    const DEFAULT_M3U_URL = "https://iptv-org.github.io/iptv/index.m3u"; // Contoh publik
+    const STORAGE_KEY = "iqtv_playlist_cache";
+
+    // DOM
+    const playerContainer = document.getElementById('playerContainer');
+    const channelsGrid = document.getElementById('channelsGrid');
+    const searchInput = document.getElementById('searchInput');
+    const clearPlaylistBtn = document.getElementById('clearPlaylist');
+    const m3uUrlInput = document.getElementById('m3uUrlInput');
+    const loadPlaylistBtn = document.getElementById('loadPlaylistBtn');
+    const categoryList = document.getElementById('categoryList');
+    const playlistNameEl = document.getElementById('playlistName');
+    const activeFilterEl = document.getElementById('activeFilter');
+    const totalChannelsEl = document.getElementById('totalChannels');
+    const totalCategoriesEl = document.getElementById('totalCategories');
+    const currentTimeEl = document.getElementById('current-time');
+
+    // State
+    let currentCategory = "all";
+    let currentPlayer = null;
+    let allChannels = [];
+    let categories = new Set();
+
+    // ===== UTILS =====
+    function updateCurrentTime() {
+      const now = new Date();
+      currentTimeEl.textContent = now.toLocaleTimeString('id-ID') + " | " + now.toLocaleDateString('id-ID');
+    }
+
+    function parseM3U(text) {
+      const lines = text.split('\n').map(l => l.trim()).filter(l => l);
+      const channels = [];
+      let currentMeta = {};
+
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+
+        if (line.startsWith('#EXTINF:')) {
+          // Parse EXTINF
+          const match = line.match(/#EXTINF:-?\d+.*?,(.+)/);
+          currentMeta.name = match ? match[1].trim() : "Unknown";
+
+          // Extract attributes
+          const attrs = {};
+          const attrRegex = /(\w+)="([^"]*)"/g;
+          let m;
+          while ((m = attrRegex.exec(line))) {
+            attrs[m[1].toLowerCase()] = m[2];
+          }
+
+          currentMeta.tvgId = attrs['tvg-id'] || '';
+          currentMeta.tvgName = attrs['tvg-name'] || currentMeta.name;
+          currentMeta.tvgLogo = attrs['tvg-logo'] || '';
+          currentMeta.groupTitle = attrs['group-title'] || 'Uncategorized';
+          currentMeta.resolution = extractResolution(line) || 'SD';
+
+        } else if (line.startsWith('http') && !line.includes('#')) {
+          // URL stream
+          channels.push({
+            name: currentMeta.name,
+            url: line,
+            category: currentMeta.groupTitle,
+            logo: currentMeta.tvgLogo,
+            resolution: currentMeta.resolution
+          });
+          currentMeta = {};
         }
+      }
+      return channels;
+    }
 
-        document.getElementById('login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Simple authentication (in production, use proper backend authentication)
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            
-            if (username === 'admin' && password === 'admin123') {
-                closeLogin();
-                document.getElementById('admin-panel').style.display = 'flex';
-            } else {
-                alert('Username atau password salah!');
-            }
+    function extractResolution(line) {
+      const resMatch = line.match(/([0-9]{3,4}[pP]|[hH][dD]|[sS][dD]|[4][kK])/);
+      if (resMatch) {
+        const r = resMatch[0].toUpperCase();
+        if (r === 'HD') return 'HD';
+        if (r === 'SD') return 'SD';
+        if (r === '4K') return '4K';
+        return r;
+      }
+      return null;
+    }
+
+    function renderCategories() {
+      categoryList.innerHTML = '';
+      const catArray = Array.from(categories).sort((a, b) => a.localeCompare(b));
+      const items = ['All Channels'].concat(catArray);
+      items.forEach(cat => {
+        const el = document.createElement('div');
+        el.className = 'menu-item ' + (cat === 'All Channels' ? 'active' : '');
+        el.dataset.category = cat === 'All Channels' ? 'all' : cat;
+        el.textContent = cat;
+        el.addEventListener('click', () => {
+          document.querySelectorAll('.menu-item').forEach(e => e.classList.remove('active'));
+          el.classList.add('active');
+          currentCategory = el.dataset.category;
+          activeFilterEl.textContent = cat;
+          renderChannels(currentCategory, searchInput.value.trim());
         });
+        categoryList.appendChild(el);
+      });
+      totalCategoriesEl.textContent = categories.size;
+    }
 
-        function closeAdmin() {
-            document.getElementById('admin-panel').style.display = 'none';
-        }
+    function renderChannels(filter = "all", searchTerm = "") {
+      channelsGrid.innerHTML = "";
+      let filtered = allChannels.filter(ch => {
+        if (filter !== "all" && ch.category !== filter) return false;
+        if (searchTerm && !ch.name.toLowerCase().includes(searchTerm.toLowerCase())) return false;
+        return true;
+      });
 
-        function switchTab(tabName) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.admin-section');
-            sections.forEach(section => section.classList.remove('active'));
-            
-            // Remove active class from all tabs
-            const tabs = document.querySelectorAll('.admin-tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            
-            // Show selected section
-            document.getElementById(tabName).classList.add('active');
-            
-            // Add active class to clicked tab
-            event.target.classList.add('active');
-        }
+      filtered.forEach(ch => {
+        const card = document.createElement('div');
+        card.className = 'channel-card';
+        card.dataset.url = ch.url;
+        card.dataset.name = ch.name;
+        card.innerHTML = `
+          <div class="channel-thumb">
+            ${ch.logo ? `<img src="${ch.logo}" alt="${ch.name}">` : `<span>${ch.resolution}</span>`}
+          </div>
+          <div class="channel-info">
+            <div class="channel-name">${ch.name}</div>
+            <div class="channel-res">${ch.category} • ${ch.resolution}</div>
+          </div>
+        `;
+        card.addEventListener('click', () => playChannel(ch));
+        channelsGrid.appendChild(card);
+      });
 
-        // Close modals when clicking outside
-        window.addEventListener('click', function(e) {
-            const loginModal = document.getElementById('login-modal');
-            const adminPanel = document.getElementById('admin-panel');
-            
-            if (e.target === loginModal) {
-                closeLogin();
-            }
-            if (e.target === adminPanel) {
-                closeAdmin();
-            }
-        });
+      totalChannelsEl.textContent = filtered.length;
+    }
 
-        // Mobile menu toggle
-        document.querySelector('.mobile-toggle').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('active');
-        });
+    function playChannel(channel) {
+      if (currentPlayer) {
+        currentPlayer.dispose();
+        currentPlayer = null;
+      }
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.querySelector('nav ul').classList.remove('active');
-            });
-        });
+      playerContainer.innerHTML = '<div class="player-placeholder"><div class="loader"></div> Loading...</div>';
 
-        // Contact form submission
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Terima kasih! Pesan Anda telah dikirim. Kami akan segera menghubungi Anda.');
-            this.reset();
-        });
+      const videoEl = document.createElement('video');
+      videoEl.id = 'my-video';
+      videoEl.className = 'video-js vjs-default-skin';
+      videoEl.controls = true;
+      videoEl.preload = 'auto';
+      videoEl.style.width = '100%';
+      videoEl.style.height = '100%';
+      playerContainer.innerHTML = '';
+      playerContainer.appendChild(videoEl);
 
-        // Initialize the website when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Website loaded successfully!');
-        });
-    </script>
+      currentPlayer = videojs('my-video', {
+        autoplay: true,
+        controls: true,
+        fluid: true,
+        techOrder: ['html5'],
+        sources: [{
+          src: channel.url,
+          type: channel.url.endsWith('.mp4') ? 'video/mp4' : 'application/x-mpegURL'
+        }]
+      });
+
+      playlistNameEl.textContent = channel.name;
+    }
+
+    function saveToCache(m3uUrl, channels) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          timestamp: Date.now(),
+          m3uUrl,
+          channels
+        }));
+      } catch (e) {
+        console.warn("Gagal simpan ke localStorage", e);
+      }
+    }
+
+    function loadFromCache() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return null;
+        return JSON.parse(raw);
+      } catch (e) {
+        return null;
+      }
+    }
+
+    async function loadPlaylist(url) {
+      if (!url) {
+        alert("Masukkan URL M3U terlebih dahulu!");
+        return;
+      }
+
+      loadPlaylistBtn.disabled = true;
+      loadPlaylistBtn.textContent = "⏳ Loading...";
+
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const text = await res.text();
+
+        const parsed = parseM3U(text);
+        allChannels = parsed;
+        categories = new Set(parsed.map(ch => ch.category));
+
+        saveToCache(url, parsed);
+        renderCategories();
+        renderChannels();
+        playlistNameEl.textContent = new URL(url).pathname.split('/').pop() || "Playlist";
+
+        alert(`✅ Berhasil muat ${parsed.length} channel!`);
+      } catch (err) {
+        alert("❌ Gagal muat playlist:\n" + err.message);
+        console.error(err);
+      } finally {
+        loadPlaylistBtn.disabled = false;
+        loadPlaylistBtn.textContent = "▶️ Load Playlist";
+      }
+    }
+
+    // ===== INIT =====
+    setInterval(updateCurrentTime, 1000);
+    updateCurrentTime();
+
+    // Load from cache on start
+    const cached = loadFromCache();
+    if (cached && cached.channels && cached.channels.length > 0) {
+      allChannels = cached.channels;
+      categories = new Set(allChannels.map(ch => ch.category));
+      renderCategories();
+      renderChannels();
+      playlistNameEl.textContent = cached.m3uUrl.split('/').pop() || "Cached Playlist";
+      m3uUrlInput.value = cached.m3uUrl;
+    } else {
+      m3uUrlInput.value = DEFAULT_M3U_URL;
+    }
+
+    // Events
+    loadPlaylistBtn.addEventListener('click', () => loadPlaylist(m3uUrlInput.value.trim()));
+    m3uUrlInput.addEventListener('keypress', e => {
+      if (e.key === 'Enter') loadPlaylist(m3uUrlInput.value.trim());
+    });
+
+    searchInput.addEventListener('input', () => {
+      renderChannels(currentCategory, searchInput.value.trim());
+    });
+
+    clearPlaylistBtn.addEventListener('click', () => {
+      if (confirm("Yakin ingin menghapus playlist & cache?")) {
+        localStorage.removeItem(STORAGE_KEY);
+        allChannels = [];
+        categories.clear();
+        categoryList.innerHTML = '<div class="menu-item active" data-category="all">All Channels</div>';
+        renderChannels();
+        playerContainer.innerHTML = '<div class="player-placeholder">Pilih saluran untuk mulai menonton</div>';
+        playlistNameEl.textContent = "jon.m3u";
+        m3uUrlInput.value = "";
+      }
+    });
+
+    // Set initial values
+    activeFilterEl.textContent = "All Channels";
+    totalChannelsEl.textContent = "0";
+    totalCategoriesEl.textContent = "0";
+  </script>
 </body>
 </html>
